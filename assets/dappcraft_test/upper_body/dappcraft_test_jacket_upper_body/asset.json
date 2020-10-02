@@ -15,14 +15,14 @@
   "main": [
 {
 "type": "BaseMale", 
-"model": "M_dappcraft_test_jacket.glb", 
+"model": "M_Jacket.glb", 
 "overrideReplaces": [
    ],
    "overrideHides": [
    ]
 },
 {"type": "BaseFemale", 
-"model": "F_dappcraft_test_jacket.glb"}
+"model": "F_Jacket.glb"}
   ],
   "rarity": "legendary",
   "description": "Keep it away from sunlight. Colors might change."
