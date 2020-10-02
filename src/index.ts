@@ -14,7 +14,25 @@ import { getAssetFolderAbsPath } from './assets/getAssetFolderAbsPath'
 import { getFileCID } from './cid/getFileCID'
 
 if (!module.parent) {
-  runMain(['base-avatars','base-exclusive','halloween_2019','xmas_2019','dcg_collection','mch_collection','dcl_launch','community_contest','stay_safe','dg_summer_2020','wonderzone_meteorchaser','dappcraft_moonminer','pm_outtathisworld','dgtble_headspace','moonshot_2020','ethermon_trainer','binance_us_collection', 'cz_mercernary','sugarclub_yumi','cybermike_suit'])
+  runMain(['base-avatars',
+  'base-exclusive',
+  'halloween_2019',
+  'xmas_2019',
+  'dcg_collection',
+  'mch_collection',
+  'dcl_launch',
+  'community_contest',
+  'stay_safe','dg_summer_2020',
+  'wonderzone_meteorchaser',
+  'dappcraft_moonminer',
+  'pm_outtathisworld',
+  'dgtble_headspace',
+  'moonshot_2020',
+  'ethermon_trainer',
+  'binance_us_collection', 
+  'cz_mercernary',
+  'sugarclub_yumi',
+  'dappcraft_test'])
   .catch(error => console.log(error, error.stack))
 }
 
@@ -38,9 +56,9 @@ export async function runMain(collectionFolders: string[]) {
 
     console.log(`Found ${categoryFolders.length} categories with ${assetFolders.length} assets in total...`)
 
-    console.log(`Output folder is set to ${'public'}. Copying files...`)
+    console.log(`Output folder is set to ${'dist'}. Copying files...`)
     try {
-      mkdirSync(join(__dirname, '..', 'public'))
+      mkdirSync(join(__dirname, '..', 'dist'))
     } catch (e) {
       // skip
     }
@@ -59,7 +77,7 @@ export async function runMain(collectionFolders: string[]) {
   }
 
   const jsonResult = JSON.stringify(allResponses, null, 2)
-  const distAbsPath = resolve(join(__dirname, '..', 'public'))
+  const distAbsPath = resolve(join(__dirname, '..', 'dist'))
 
   writeFileSync(join(distAbsPath, 'expected.json'), jsonResult)
   writeFileSync(join(distAbsPath, 'index.json'), jsonResult)
